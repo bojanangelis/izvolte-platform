@@ -1,17 +1,21 @@
+import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native'
 import { Stack } from 'expo-router/stack'
 import { useColorScheme } from 'react-native'
 
 export default function AuthLayout() {
-  return (
-    <Stack
-      screenOptions={{
-        headerShown: false,
-      }}
-    >
-      <Stack.Screen name='index' />
-      <Stack.Screen name='login' />
+  const colorScheme = useColorScheme()
 
-      {/* <AuthStack.Screen name="StartUp" component={StartUp} />
+  return (
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name='index' />
+        <Stack.Screen name='login' />
+
+        {/* <AuthStack.Screen name="StartUp" component={StartUp} />
       <AuthStack.Screen name="GetStarted" component={GetStarted} />
       <AuthStack.Screen name="SignUpScreen" component={SignUpScreen} />
       <AuthStack.Screen name="ConfirmEmail" component={ConfirmEmailScreen} />
@@ -25,6 +29,7 @@ export default function AuthLayout() {
       />
       <AuthStack.Screen name="NewPassword" component={NewPasswordScreen} />
     </AuthStack.Navigator> */}
-    </Stack>
+      </Stack>
+    </ThemeProvider>
   )
 }
