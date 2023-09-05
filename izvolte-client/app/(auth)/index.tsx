@@ -13,7 +13,7 @@ const IndexAuth = () => {
       />
       <Image
         source={require('../../assets/images/izvolte.jpeg')}
-        className='object-contain h-16 w-28 absolute top-24 left-8 z-50 rounded'
+        className='object-contain h-16 w-32 absolute top-24 left-8 z-50 rounded'
       />
       <View className='flex z-10 w-full h-1/5 items-center'>
         <Text className='text-2xl tracking-wide font-mono font-semibold py-3'>
